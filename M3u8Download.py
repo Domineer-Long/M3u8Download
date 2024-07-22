@@ -64,7 +64,7 @@ class M3u8Download:
                 pool.submit(self.download_ts, ts_url, os.path.join(self._file_path, str(k)), self._num_retries)
         if self._success_sum == self._ts_sum:
             self.output_mp4()
-            self.delete_file()
+            # self.delete_file()
             print(f"Download successfully --> {self._name}")
 
     def get_m3u8_info(self, m3u8_url, num_retries):
