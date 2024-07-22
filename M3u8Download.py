@@ -227,6 +227,9 @@ def proc(url_list, name_list):
 if __name__ == "__main__":
     while True:
         url_list = input("输入url，若同时输入多个url时要用|分开：").split('|')
+        if len(url_list) == 1 and url_list[0] == '' :
+            print('未输入任何 url，程序自动退出')
+            sys.exit()
         name_list = []
         for url in url_list:
             name = os.path.basename(url)
