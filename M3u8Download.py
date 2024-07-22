@@ -64,7 +64,7 @@ class M3u8Download:
                 pool.submit(self.download_ts, ts_url, os.path.join(self._file_path, str(k)), self._num_retries)
         if self._success_sum == self._ts_sum:
             self.output_mp4()
-            # self.delete_file()
+            self.delete_file()
             print(f"Download successfully --> {self._name}")
 
     def get_m3u8_info(self, m3u8_url, num_retries):
@@ -225,7 +225,7 @@ def proc(url_list, name_list):
     exit()
 
 if __name__ == "__main__":
-    while True:
+    # while True:
         url_list = input("输入url，若同时输入多个url时要用|分开：").split('|')
         if len(url_list) == 1 and url_list[0] == '' :
             print('未输入任何 url，程序自动退出')
